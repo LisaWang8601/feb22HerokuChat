@@ -20,11 +20,11 @@ export default class Game{
             case GameState.FLAT:
                 if(sInput.toLowerCase().match("wait")){
                     sReply = "The road is deserted. After 1 hour there is still no help. Do you keep Waiting or do you go to the house?";
+                    this.stateCur = GameState.FLAT;
                 }else{
                     sReply ="On the door is a large knocker. Do you knock or run back to your car to wait?";
                     this.stateCur = GameState.MANSION;
                 }
-                this.stateCur = GameState.FLAT;
                 break;
         }
         return([sReply]);
