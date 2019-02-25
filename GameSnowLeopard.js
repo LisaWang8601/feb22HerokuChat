@@ -51,7 +51,7 @@ export default class GameSnowLeopard{
         //this.statePast = GameState.CLIFF;
         this.aAnimals = ["a wild yak", "an Argali wild sheep", "a blue sheep", "a marmot", "a pika", "a deer"];
         this.bDone = false;
-        this.this.thisthis.iPreserve = 0;
+        this.iPreserve = 0;
         }
 
 // Function GameSnowLeopard.
@@ -85,9 +85,9 @@ makeAMove(sInput){
                 if(sInput.toLowerCase().match("wait")){
                     this.stateCur = GameState.CLIFF;
                     //i = Math.ceil(Math.random()*6); 
-                    this.thisthis.iPreserve = i;
+                    this.this.iPreserve = i;
                     sReply  =  "You are resting and enjoying the view from the top of a cliff which is 3 meters high. Now you see " 
-                            + this.aAnimals[thisthis.iPreserve-1] + " wondering under the cliff. Would you jump off the cliff to catch it or would you rather stay put?";
+                            + this.aAnimals[this.iPreserve-1] + " wondering under the cliff. Would you jump off the cliff to catch it or would you rather stay put?";
                     break;
                 }
                 else if (sInput.toLowerCase().match("go")) {
@@ -105,7 +105,7 @@ makeAMove(sInput){
                 if(sInput.toLowerCase().match("stay")){
                     this.stateCur = GameState.CLIFF;
                     sReply  =  "You are resting and enjoying the view from the top of a cliff which is 3 meters high. Now you see " 
-                    + this.aAnimals[thisthis.iPreserve-1] + " wondering under the cliff. Would you jump off the cliff to catch it or would you rather stay put?";
+                    + this.aAnimals[this.iPreserve-1] + " wondering under the cliff. Would you jump off the cliff to catch it or would you rather stay put?";
                     break;
                 }
                 else if(sInput.toLowerCase().match("jump")){
@@ -197,13 +197,13 @@ makeAMove(sInput){
                     } 
                 else if (Math.pow((-nInput), k) > Math.pow(j, k)){      
                     // the number given by user is compared with a random number to decide which state is next.  
-                    if(this.thisthis.iPreserve == 1){
+                    if(this.this.iPreserve == 1){
                         sReply = "Wow! You took down a yak! Now you are full. Would you rest near your left over or walk around to guard your territory."
                         this.stateCur = GameState.FULL;   // if - == 1, it's the yak 
                         break;
                     }
-                    else if ((this.iPreserve==2)||(this.thisthis.iPreserve==3)){
-                        sReply = "Great you got the " + aAnimals[this.thisthis.iPreserve-1] + "! Now you are full. Would you rest near your leftover or walk around to guard your territory."
+                    else if ((this.iPreserve==2)||(this.this.iPreserve==3)){
+                        sReply = "Great you got the " + aAnimals[this.this.iPreserve-1] + "! Now you are full. Would you rest near your leftover or walk around to guard your territory."
                         this.stateCur = GameState.FULL;
                         break;
                     }
@@ -214,7 +214,7 @@ makeAMove(sInput){
                     }
                 }
                 // miss-the-animal scenarios:
-                else if (this.thisthis.iPreserve == 1){
+                else if (this.this.iPreserve == 1){
                     sReply ="Too bad! You got kicked by the yak. Game over! Start a new game when you feel better.";
                     this.bDone = true;
                     this.stateCur = GameState.NEW_GAME; //? how to deal with the bDone = true scenario?
@@ -235,7 +235,7 @@ makeAMove(sInput){
                         //i = Math.ceil(Math.random()*6); 
                         sReply = "You are resting and enjoying the view from the top of a cliff. Now you see. " 
                                 +   this.aAnimals[i-1] + " wondering under the cliff. Would you jump on it or would you stay on the cliff?";
-                        this.thisthis.iPreserve = i;
+                        this.iPreserve = i;
                         this.stateCur = GameState.CLIFF;
                     break;
                     }
@@ -272,7 +272,7 @@ makeAMove(sInput){
                         //i = Math.ceil(Math.random()*6); 
                         sReply ="You are resting and enjoying the view from the top of a cliff. Now you see. " 
                                 + this.aAnimals[i-1] + " wondering under the cliff. Would you jump on it or would you stay on the cliff?";
-                        this.thisthis.iPreserve = i;
+                        this.Preserve = i;
                         this.stateCur = GameState.CLIFF;
                         break;
                     } 
@@ -334,7 +334,7 @@ makeAMove(sInput){
                         //i = Math.ceil(Math.random()*6); 
                         sReply ="You are resting and enjoying the view from the top of a cliff. Now you see. " 
                                 +   this.aAnimals[i-1] + " wondering under the cliff. Would you jump on it or would you stay on the cliff?";
-                        this.thisthis.iPreserve = i;
+                        this.iPreserve = i;
                         this.stateCur = GameState.CLIFF;
                         break;
                     } 
@@ -348,7 +348,7 @@ makeAMove(sInput){
                         //i = Math.ceil(Math.random()*6); 
                         sReply ="You are resting and enjoying the view from the top of a cliff. Now you see. " 
                                 +   this.aAnimals[i-1] + " wondering under the cliff. Would you jump on it or would you stay on the cliff?";
-                        this.thisthis.iPreserve = i;
+                        this.iPreserve = i;
                         this.stateCur = GameState.CLIFF;
                         break;
                     }
